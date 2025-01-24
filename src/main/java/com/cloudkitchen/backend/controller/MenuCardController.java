@@ -9,7 +9,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("api/v1/menucards/")
+@RequestMapping("/api/v1/menucards/")
 public class MenuCardController {
 @Autowired(required = true)
 private final MenuCardsService menuCardsService;
@@ -22,6 +22,11 @@ private final MenuCardsService menuCardsService;
     public ResponseEntity<MenuCardDto> createCard(@RequestBody MenuCardDto menuCarddto){
 
         return new ResponseEntity<>(menuCardsService.createMenuCards(menuCarddto),HttpStatus.CREATED);
+    }
+    @GetMapping ("creat")
+    public ResponseEntity<String> createCard(){
+
+        return new ResponseEntity<>("yes run",HttpStatus.OK);
     }
 
 }
