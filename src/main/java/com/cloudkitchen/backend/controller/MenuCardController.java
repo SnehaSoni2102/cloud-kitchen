@@ -29,4 +29,10 @@ private final MenuCardsService menuCardsService;
         return new ResponseEntity<>("yes run",HttpStatus.OK);
     }
 
+    @GetMapping ("crea")
+    public ResponseEntity<String> createCard1(){
+
+        return new ResponseEntity<>("yes run1",HttpStatus.OK);
+    }
+
 }

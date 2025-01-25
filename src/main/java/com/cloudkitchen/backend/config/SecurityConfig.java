@@ -26,7 +26,8 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable()) // Disable CSRF
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/v1/menucards/**").permitAll()
+                        .requestMatchers("/api/v1/menucards/create").hasRole("USER")
+                        .requestMatchers("/api/v1/menucards/creat").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 ).httpBasic(Customizer.withDefaults());
 

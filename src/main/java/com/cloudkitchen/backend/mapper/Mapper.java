@@ -2,6 +2,8 @@ package com.cloudkitchen.backend.mapper;
 
 import com.cloudkitchen.backend.dto.MenuCardDto;
 import com.cloudkitchen.backend.model.MenuCards;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 public class Mapper {
     public static MenuCardDto mapToDto(MenuCards menuCards){
