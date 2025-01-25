@@ -20,4 +20,36 @@ public class MenuCards {
     private int ratings;
 
     private List<String> cuisine;
+
+    public long getId() {
+        return id;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public int getRatings() {
+        return ratings;
+    }
+
+    public List<String> getCuisine() {
+        return cuisine;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
+    }
+
+    public void setRatings(int ratings) {
+        this.ratings = ratings;
+    }
+
+    public void setCuisine(List<String> cuisine) {
+        this.cuisine = cuisine;
+    }
 }
