@@ -43,6 +43,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/v1/menucards/create").hasRole("USER")
                         .requestMatchers("/api/v1/menucards/creat").hasRole("ADMIN")
                         .requestMatchers("/api/auth/login").permitAll()
+                        .requestMatchers("/api/auth/**").permitAll()
                         .anyRequest().authenticated()
                 ).httpBasic(Customizer.withDefaults());
 
