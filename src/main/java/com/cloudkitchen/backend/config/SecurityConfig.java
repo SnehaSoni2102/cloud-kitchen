@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import org.springframework.context.annotation.Lazy;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
@@ -41,6 +42,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/v1/menucards/create").hasRole("USER")
                         .requestMatchers("/api/v1/menucards/creat").hasRole("ADMIN")
+                        .requestMatchers("/api/auth/login").permitAll()
                         .anyRequest().authenticated()
                 ).httpBasic(Customizer.withDefaults());
 

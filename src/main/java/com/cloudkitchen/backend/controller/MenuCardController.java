@@ -20,6 +20,7 @@ private final MenuCardsService menuCardsService;
 
     @PostMapping ("create")
     public ResponseEntity<MenuCardDto> createCard(@RequestBody MenuCardDto menuCarddto){
+        System.out.println("Menucard "+menuCarddto);
 
         return new ResponseEntity<>(menuCardsService.createMenuCards(menuCarddto),HttpStatus.CREATED);
     }
