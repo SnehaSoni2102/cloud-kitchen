@@ -8,6 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/v1/menucards/")
 public class MenuCardController {
@@ -20,20 +22,17 @@ private final MenuCardsService menuCardsService;
 
     @PostMapping ("create")
     public ResponseEntity<MenuCardDto> createCard(@RequestBody MenuCardDto menuCarddto){
-        System.out.println("Menucard "+menuCarddto);
-
         return new ResponseEntity<>(menuCardsService.createMenuCards(menuCarddto),HttpStatus.CREATED);
     }
-    @GetMapping ("creat")
-    public ResponseEntity<String> createCard(){
+    @GetMapping ("getMenu")
+    public ResponseEntity<List<MenuCardDto>> createCard(){
 
-        return new ResponseEntity<>("yes run",HttpStatus.OK);
+        return new ResponseEntity<>(menuCardsService.getAllMenucards(),HttpStatus.OK);
     }
 
-    @GetMapping ("crea")
-    public ResponseEntity<String> createCard1(){
-
-        return new ResponseEntity<>("yes run1",HttpStatus.OK);
+    @GetMapping("getMenu/{id}")
+    public ResponseEntity<MenuCardDto> createCard1(@PathVariable long id) {
+        return new ResponseEntity<>(menuCardsService.getMenucardsById(id), HttpStatus.OK);
     }
 
 }

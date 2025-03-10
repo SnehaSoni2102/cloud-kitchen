@@ -10,7 +10,7 @@ import java.util.List;
 @NoArgsConstructor
 public class MenuCardDto {
 
-    private int id;
+    private long id;
 
     private String imageURL;
 
@@ -18,7 +18,7 @@ public class MenuCardDto {
 
     private List<String> cuisine;
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -34,7 +34,7 @@ public class MenuCardDto {
         this.cuisine = cuisine;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 

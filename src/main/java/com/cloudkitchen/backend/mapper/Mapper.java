@@ -4,10 +4,11 @@ import com.cloudkitchen.backend.dto.MenuCardDto;
 import com.cloudkitchen.backend.model.MenuCards;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-
+@Component
 public class Mapper {
     public static MenuCardDto mapToDto(MenuCards menuCards){
         MenuCardDto menuCardDto =new MenuCardDto();
+        menuCardDto.setId(menuCards.getId());
         menuCardDto.setImageURL(menuCards.getImageURL());
         menuCardDto.setRatings(menuCards.getRatings());
         menuCardDto.setCuisine(menuCards.getCuisine());
