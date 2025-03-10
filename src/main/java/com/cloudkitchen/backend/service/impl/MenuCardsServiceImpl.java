@@ -38,14 +38,14 @@ public class MenuCardsServiceImpl implements MenuCardsService {
     }
 
     @Override
-    public List<MenuCardDto> getAllMenucards() {
+    public List<MenuCardDto> getAllMenuCards() {
         List<MenuCards> allMenuCards = menuCardRepository.findAll();
         List<MenuCardDto> allMenuCardsDto = allMenuCards.stream().map(allMenucards -> mapper.mapToDto(allMenucards)).collect(Collectors.toList());
         return allMenuCardsDto;
     }
 
     @Override
-    public MenuCardDto getMenucardsById(long id) {
+    public MenuCardDto getMenuCardsById(long id) {
         MenuCards menuCards = menuCardRepository.findById(id).orElseThrow(null);
         MenuCardDto menuCardDto = mapper.mapToDto(menuCards);
         return menuCardDto;

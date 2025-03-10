@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface MenuCardsService {
     public MenuCardDto createMenuCards(MenuCardDto menuCardDto);
-    public List<MenuCardDto> getAllMenucards();
-    public MenuCardDto getMenucardsById(long id);
+    public List<MenuCardDto> getAllMenuCards();
+    public MenuCardDto getMenuCardsById(long id);
 }

@@ -25,14 +25,17 @@ private final MenuCardsService menuCardsService;
         return new ResponseEntity<>(menuCardsService.createMenuCards(menuCarddto),HttpStatus.CREATED);
     }
     @GetMapping ("getMenu")
-    public ResponseEntity<List<MenuCardDto>> createCard(){
-
-        return new ResponseEntity<>(menuCardsService.getAllMenucards(),HttpStatus.OK);
+    public ResponseEntity<List<MenuCardDto>> getAllMenuCards(){
+        return new ResponseEntity<>(menuCardsService.getAllMenuCards(),HttpStatus.OK);
     }
 
     @GetMapping("getMenu/{id}")
-    public ResponseEntity<MenuCardDto> createCard1(@PathVariable long id) {
-        return new ResponseEntity<>(menuCardsService.getMenucardsById(id), HttpStatus.OK);
+    public ResponseEntity<MenuCardDto> getMenuCardsById(@PathVariable(name="id") long id) {
+        return new ResponseEntity<>(menuCardsService.getMenuCardsById(id), HttpStatus.OK);
+    }
+
+    public ResponseEntity<MenuCardDto> updateMenuCardById(@PathVariable(name="id") long id, @RequestBody MenuCardDto menuCardDto){
+        return new ResponseEntity<>(menuCardsService.createMenuCards(menuCardDto),HttpStatus.CREATED);
     }
 
 }
